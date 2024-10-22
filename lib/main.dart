@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         path: '/update/:petId',
         builder: (context, state) {
           final pet = Provider.of<PetsProvider>(context).pets.firstWhere(
-              (pet) => pet.id.toString() == (state.params['petId']!));
+              (pet) => pet.id.toString() == (state.pathParameters['petId']!));
           return UpdatePage(pet: pet);
         },
       ),
